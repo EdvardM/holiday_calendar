@@ -23,15 +23,15 @@ Or install it yourself as:
 
 ## Usage
 
-require 'holiday_calendar'
+    require 'holiday_calendar'
 
-c = HolidayCalendar::HolidayCalendar.new
-c.holiday?(Date.new(2013, 1, 1)) # => true
+    c = HolidayCalendar::HolidayCalendar.new
+    c.holiday?(Date.new(2013, 1, 1)) # => true
 
-Constructor supports two optional hash parameters:
+    Constructor supports two optional hash parameters:
 
-:cal_uri    - url to calendar to use, defaults to finnish calendar
-:cache_file - specify full path to the cache file
+    :cal_uri    - url to calendar to use, defaults to finnish calendar
+    :cache_file - specify full path to the cache file
 
 ## Contributing
 
