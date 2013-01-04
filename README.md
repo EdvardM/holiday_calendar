@@ -1,6 +1,11 @@
 # HolidayCalendar
 
-TODO: Write a gem description
+HolidayCalendar was built to find out which days
+are national holidays. It was intended to use for Finnish
+national holidays, but should be easy to customize.
+
+It uses Google ical format calendars, and fetches 
+calendar via http caching retrieved data.
 
 ## Installation
 
@@ -18,7 +23,15 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+require 'holiday_calendar'
+
+c = HolidayCalendar::HolidayCalendar.new
+c.holiday?(Date.new(2013, 1, 1)) # => true
+
+Constructor supports two optional hash parameters:
+
+:cal_uri    - url to calendar to use, defaults to finnish calendar
+:cache_file - specify full path to the cache file
 
 ## Contributing
 
