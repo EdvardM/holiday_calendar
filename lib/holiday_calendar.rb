@@ -64,7 +64,7 @@ module HolidayCalendar
     end
 
     def weekdays_between(d1, d2)
-      raise ArgumentError if d2 < d1
+      raise ArgumentError, "second date must be greater or equal to first date" if d2 < d1
 
       (d1+1..d2).inject(0) do |count, d|
         count += weekday?(d) ? 1 : 0
