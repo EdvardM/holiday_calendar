@@ -52,7 +52,7 @@ module HolidayCalendar
     end
 
     def weekday?(date)
-      !holiday?
+      !holiday?(date)
     end
 
     def holiday?(date)
@@ -61,6 +61,14 @@ module HolidayCalendar
 
     def weekend?(date)
       [0, 6].include?(date.wday)
+    end
+
+    def weekdays_between(d1, d2)
+      raise ArgumentError if d2 < d1
+
+      (d1+1..d2).inject(0) do |count, d|
+        count += weekday?(d) ? 1 : 0
+      end
     end
 
     private

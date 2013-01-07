@@ -18,4 +18,14 @@ describe HolidayCalendar do
   it "should NOT mark monday 2013-01-07 as holiday" do
     @cal.holiday?(Date.new(2013, 1, 7)).should be_false
   end
+
+  it "should return number of weekdays between given days with no holidays" do
+    d1, d2 = [[4, 22], [4, 25]].map { |m, d| Date.new(2013, m, d) }
+    @cal.weekdays_between(d1, d2).should == 3
+  end
+
+  it "should return number of weekdays between given days with a holiday" do
+    d1, d2 = [[4, 25], [5, 6]].map { |m, d| Date.new(2013, m, d) }
+    @cal.weekdays_between(d1, d2).should == 6
+  end
 end
