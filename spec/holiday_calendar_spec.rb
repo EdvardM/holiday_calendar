@@ -28,4 +28,10 @@ describe HolidayCalendar do
     d1, d2 = [[4, 25], [5, 6]].map { |m, d| Date.new(2013, m, d) }
     @cal.weekdays_between(d1, d2).should == 6
   end
+
+  it "should return negative day count if second date is before first" do
+    d1, d2 = [[4, 25], [5, 6]].map { |m, d| Date.new(2013, m, d) }
+    @cal.weekdays_between(d2, d1).should == -6
+  end
+
 end
