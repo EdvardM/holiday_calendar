@@ -7,6 +7,8 @@ national holidays, but should be easy to customize.
 It uses Google ical format calendars, and fetches 
 calendar via http caching retrieved data.
 
+Source code conforms to semantic versioning (http://semver.org/)
+
 ## Installation
 
 Add this line to your application's Gemfile:
