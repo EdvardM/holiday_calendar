@@ -35,7 +35,7 @@ module HolidayCalendar
     # read calendar from uri. Can be local file or remote path
     def read_calendar(uri)
       if uri
-        open(uri).read
+        open(uri, {ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE}).read
       else
         File.read('resource/basic.ics')
       end
