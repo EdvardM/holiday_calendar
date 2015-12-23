@@ -34,7 +34,11 @@ module HolidayCalendar
 
     # read calendar from uri. Can be local file or remote path
     def read_calendar(uri)
-      File.read('resource/basic.ics')
+      if uri
+        open(uri).read
+      else
+        File.read('resource/basic.ics')
+      end
     end
 
     def needs_cache_refresh?(fpath)
