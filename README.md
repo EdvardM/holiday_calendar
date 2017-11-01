@@ -1,5 +1,8 @@
 # HolidayCalendar
 
+**Deprecated**. See https://github.com/holidays/holidays for much better gem. It does handle
+Finnish holidays, and does not depend on any external resources.
+
 HolidayCalendar was built to find out which days
 are national holidays. It was intended to use for Finnish
 national holidays, but should be easy to customize.
